@@ -55,7 +55,7 @@
             label2.Name = "label2";
             label2.Size = new Size(59, 15);
             label2.TabIndex = 1;
-            label2.Text = "Pet Name";
+            label2.Text = "Pet &Name";
             // 
             // txtPetName
             // 
@@ -63,6 +63,8 @@
             txtPetName.Name = "txtPetName";
             txtPetName.Size = new Size(152, 23);
             txtPetName.TabIndex = 2;
+            txtPetName.Enter += txtPetName_Enter;
+            txtPetName.Leave += txtPetName_Leave;
             // 
             // label3
             // 
@@ -71,7 +73,7 @@
             label3.Name = "label3";
             label3.Size = new Size(90, 15);
             label3.TabIndex = 3;
-            label3.Text = "Times Per Week";
+            label3.Text = "&Times Per Week";
             // 
             // txtNumPerWeek
             // 
@@ -79,6 +81,8 @@
             txtNumPerWeek.Name = "txtNumPerWeek";
             txtNumPerWeek.Size = new Size(100, 23);
             txtNumPerWeek.TabIndex = 4;
+            txtNumPerWeek.Enter += txtNumPerWeek_Enter;
+            txtNumPerWeek.Leave += txtNumPerWeek_Leave;
             // 
             // lstOut
             // 
@@ -87,6 +91,7 @@
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(288, 139);
             lstOut.TabIndex = 5;
+            lstOut.TabStop = false;
             // 
             // btnCalculate
             // 
