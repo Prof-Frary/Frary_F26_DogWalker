@@ -23,20 +23,24 @@ namespace Frary_F26_DogWalker
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             //declarations
-            string petName;
-            int numPerWeek;
-            decimal serviceCost = 20.0m;
+          //  string petName;
+           // int numPerWeek;
+            //decimal serviceCost = 20.0m;
             decimal weeklyCost;
 
-            // input
-            petName = txtPetName.Text.Trim();
-            numPerWeek = int.Parse(txtNumPerWeek.Text);
+            //create the DogWalker object
+           DogWalker dWalker = new DogWalker();
 
-            weeklyCost = numPerWeek * serviceCost;
+            // input
+            dWalker.PetName = txtPetName.Text.Trim();
+            dWalker.NumberPerWeek = uint.Parse(txtNumPerWeek.Text);
+            weeklyCost = dWalker.CalculateWeeklyCost();
+
+            //weeklyCost = numPerWeek * serviceCost;
             //output results to the list box
-            lstOut.Items.Add("Pet name is " + petName);
-            lstOut.Items.Add("Number of walks/services per week is " + numPerWeek.ToString("N0"));
-            lstOut.Items.Add("Cost per service is " + serviceCost.ToString("C"));
+            lstOut.Items.Add("Pet name is " + dWalker.PetName);
+            lstOut.Items.Add("Number of walks/services per week is " + dWalker.NumberPerWeek.ToString("N0"));
+            lstOut.Items.Add("Cost per service is " + dWalker.ServiceCost.ToString("C"));
             lstOut.Items.Add("Total weekly cost is " + weeklyCost.ToString("C"));
         }
 
