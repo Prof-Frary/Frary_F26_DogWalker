@@ -8,38 +8,37 @@ namespace Frary_F26_DogWalker
     {
         
         private decimal sCost =20.0m;  //backing variable for the service cost
-     /* This is 
-        public decimal getServiceCost()
-        {
-            return sCost;
-        }
-        public void setServiceCost(decimal value)
-        {
-            if (value > 0)
-            {
-                sCost = value;
-            }
-        }
-     */
+        private decimal wCost; //backing variable for the weekly cost
 
         //constructors
         public DogWalker()
         {
-            PetName = "";
-            NumberPerWeek = 1;
+           // PetName = "";
+            //NumberPerWeek = 0;
+            // calculating weekly cost in this case is not done
+            // since it would not be valid
+
         }
 
         public DogWalker(string petName, uint numberPerWeek)
         {
             PetName = petName;
             NumberPerWeek = numberPerWeek;
-           
-            
+            CalculateWeeklyCost();
         }
 
-      public decimal CalculateWeeklyCost()
+        public DogWalker(string petName, uint numberPerWeek, decimal serviceCost)
         {
-            return NumberPerWeek * ServiceCost;
+            PetName = petName;
+            NumberPerWeek = numberPerWeek;
+            ServiceCost = serviceCost;
+            CalculateWeeklyCost();
+        }
+
+        public decimal CalculateWeeklyCost()
+        {
+            wCost = NumberPerWeek * ServiceCost;
+            return wCost;
         }
 
         //properties
@@ -60,5 +59,18 @@ namespace Frary_F26_DogWalker
         }
 
         public uint NumberPerWeek{ get; set; }
+
+        // weekly cost can only be set within the class
+        public decimal WeeklyCost
+        {
+            get { return wCost; }
+            private set
+            {
+                if (value > 0)
+                {
+                    wCost = value;
+                }
+            }
+        }
     }
 }
