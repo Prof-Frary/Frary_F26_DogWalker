@@ -89,7 +89,7 @@
             lstOut.FormattingEnabled = true;
             lstOut.Location = new Point(20, 219);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(288, 139);
+            lstOut.Size = new Size(435, 139);
             lstOut.TabIndex = 5;
             lstOut.TabStop = false;
             // 
@@ -127,7 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(343, 450);
+            ClientSize = new Size(467, 450);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalculate);
