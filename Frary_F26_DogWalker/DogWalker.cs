@@ -9,6 +9,7 @@ namespace Frary_F26_DogWalker
 
         private decimal sCost = 20.0m;  //backing variable for the service cost
         private decimal wCost; //backing variable for the weekly cost
+       
 
         //constructors
         public DogWalker()
