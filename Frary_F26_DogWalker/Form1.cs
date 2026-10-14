@@ -30,10 +30,10 @@ namespace Frary_F26_DogWalker
         {
             //declarations
             string petName;
-            // unsigned int means you can't have negative numbers
+            // uint is an unsigned int this means you
+            // can't have negative numbers
             uint numPerWeek;
-            decimal serviceCost = 20.0m;
-            decimal weeklyCost;
+            decimal serviceCost = 20.0m;           
             bool isNumWeekValid;
             bool isPetNameValid = true;
             //input
@@ -64,6 +64,7 @@ namespace Frary_F26_DogWalker
                 dWalker1.CalculateWeeklyCost();
 
                 //2. Using the constructor with parameters
+                // Calcuulation is done in the class
                 DogWalker dWalker2 = new DogWalker(petName, numPerWeek, serviceCost);
 
                 //weeklyCost = numPerWeek * serviceCost;

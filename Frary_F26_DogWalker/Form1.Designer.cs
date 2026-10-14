@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
+            lblPetName = new Label();
             txtPetName = new TextBox();
-            label3 = new Label();
+            lblNumberTimesPerWeek = new Label();
             txtNumPerWeek = new TextBox();
             lstOut = new ListBox();
             btnCalculate = new Button();
@@ -50,15 +50,15 @@
             label1.TabIndex = 0;
             label1.Text = "Dog Walker Weekly Calculation";
             // 
-            // label2
+            // lblPetName
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(21, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Pet &Name";
+            lblPetName.AutoSize = true;
+            lblPetName.Font = new Font("Segoe UI", 12F);
+            lblPetName.Location = new Point(21, 120);
+            lblPetName.Name = "lblPetName";
+            lblPetName.Size = new Size(77, 21);
+            lblPetName.TabIndex = 1;
+            lblPetName.Text = "Pet &Name";
             // 
             // txtPetName
             // 
@@ -70,15 +70,15 @@
             txtPetName.Enter += txtPetName_Enter;
             txtPetName.Leave += txtPetName_Leave;
             // 
-            // label3
+            // lblNumberTimesPerWeek
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(24, 177);
-            label3.Name = "label3";
-            label3.Size = new Size(119, 21);
-            label3.TabIndex = 3;
-            label3.Text = "&Times Per Week";
+            lblNumberTimesPerWeek.AutoSize = true;
+            lblNumberTimesPerWeek.Font = new Font("Segoe UI", 12F);
+            lblNumberTimesPerWeek.Location = new Point(24, 177);
+            lblNumberTimesPerWeek.Name = "lblNumberTimesPerWeek";
+            lblNumberTimesPerWeek.Size = new Size(119, 21);
+            lblNumberTimesPerWeek.TabIndex = 3;
+            lblNumberTimesPerWeek.Text = "&Times Per Week";
             // 
             // txtNumPerWeek
             // 
@@ -143,13 +143,12 @@
             Controls.Add(btnCalculate);
             Controls.Add(lstOut);
             Controls.Add(txtNumPerWeek);
-            Controls.Add(label3);
+            Controls.Add(lblNumberTimesPerWeek);
             Controls.Add(txtPetName);
-            Controls.Add(label2);
+            Controls.Add(lblPetName);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Frary Dog Walker Transaction Form";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,9 +156,9 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label lblPetName;
         private TextBox txtPetName;
-        private Label label3;
+        private Label lblNumberTimesPerWeek;
         private TextBox txtNumPerWeek;
         private ListBox lstOut;
         private Button btnCalculate;

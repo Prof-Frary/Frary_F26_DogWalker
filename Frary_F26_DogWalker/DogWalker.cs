@@ -13,8 +13,8 @@ namespace Frary_F26_DogWalker
         //constructors
         public DogWalker()
         {
-            // PetName = "";
-            //NumberPerWeek = 0;
+            PetName = "";
+            NumberPerWeek = 0;
             // calculating weekly cost in this case is not done
             // since it would not be valid
 
