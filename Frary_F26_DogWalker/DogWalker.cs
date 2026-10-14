@@ -5,11 +5,10 @@ using System.Text;
 namespace Frary_F26_DogWalker
 {
     internal class DogWalker
-    {
+    {       
 
-        private decimal sCost = 20.0m;  //backing variable for the service cost
-        private decimal wCost; //backing variable for the weekly cost
-       
+        private decimal sCost;  //backing variable for the service cost
+        private decimal wCost; //backing variable for the weekly cost        
 
         //constructors
         public DogWalker()
@@ -25,6 +24,7 @@ namespace Frary_F26_DogWalker
         {
             PetName = petName;
             NumberPerWeek = numberPerWeek;
+            sCost = 20.0m; // default value for service cost
             CalculateWeeklyCost();
         }
 

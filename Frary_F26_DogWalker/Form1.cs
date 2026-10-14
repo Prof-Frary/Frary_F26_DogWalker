@@ -114,9 +114,6 @@ namespace Frary_F26_DogWalker
             txtNumPerWeek.BackColor = SystemColors.Window;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

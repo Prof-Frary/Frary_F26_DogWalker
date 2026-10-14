@@ -53,17 +53,19 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
             label2.Location = new Point(21, 120);
             label2.Name = "label2";
-            label2.Size = new Size(59, 15);
+            label2.Size = new Size(77, 21);
             label2.TabIndex = 1;
             label2.Text = "Pet &Name";
             // 
             // txtPetName
             // 
-            txtPetName.Location = new Point(110, 112);
+            txtPetName.Font = new Font("Segoe UI", 12F);
+            txtPetName.Location = new Point(156, 112);
             txtPetName.Name = "txtPetName";
-            txtPetName.Size = new Size(152, 23);
+            txtPetName.Size = new Size(271, 29);
             txtPetName.TabIndex = 2;
             txtPetName.Enter += txtPetName_Enter;
             txtPetName.Leave += txtPetName_Leave;
@@ -71,35 +73,39 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(24, 177);
             label3.Name = "label3";
-            label3.Size = new Size(90, 15);
+            label3.Size = new Size(119, 21);
             label3.TabIndex = 3;
             label3.Text = "&Times Per Week";
             // 
             // txtNumPerWeek
             // 
-            txtNumPerWeek.Location = new Point(136, 174);
+            txtNumPerWeek.Font = new Font("Segoe UI", 12F);
+            txtNumPerWeek.Location = new Point(156, 177);
             txtNumPerWeek.Name = "txtNumPerWeek";
-            txtNumPerWeek.Size = new Size(100, 23);
+            txtNumPerWeek.Size = new Size(271, 29);
             txtNumPerWeek.TabIndex = 4;
             txtNumPerWeek.Enter += txtNumPerWeek_Enter;
             txtNumPerWeek.Leave += txtNumPerWeek_Leave;
             // 
             // lstOut
             // 
+            lstOut.Font = new Font("Segoe UI", 12F);
             lstOut.FormattingEnabled = true;
-            lstOut.Location = new Point(20, 219);
+            lstOut.Location = new Point(24, 226);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(435, 139);
+            lstOut.Size = new Size(431, 130);
             lstOut.TabIndex = 5;
             lstOut.TabStop = false;
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(20, 382);
+            btnCalculate.Font = new Font("Segoe UI", 12F);
+            btnCalculate.Location = new Point(12, 373);
             btnCalculate.Name = "btnCalculate";
-            btnCalculate.Size = new Size(75, 45);
+            btnCalculate.Size = new Size(119, 65);
             btnCalculate.TabIndex = 6;
             btnCalculate.Text = "Calculate && &Display";
             btnCalculate.UseVisualStyleBackColor = true;
@@ -107,9 +113,10 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(132, 382);
+            btnClear.Font = new Font("Segoe UI", 12F);
+            btnClear.Location = new Point(171, 373);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 45);
+            btnClear.Size = new Size(119, 65);
             btnClear.TabIndex = 7;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -117,9 +124,10 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(233, 382);
+            btnQuit.Font = new Font("Segoe UI", 12F);
+            btnQuit.Location = new Point(336, 373);
             btnQuit.Name = "btnQuit";
-            btnQuit.Size = new Size(75, 45);
+            btnQuit.Size = new Size(119, 65);
             btnQuit.TabIndex = 8;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
@@ -141,6 +149,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Frary Dog Walker Transaction Form";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
