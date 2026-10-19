@@ -1,7 +1,13 @@
 namespace Frary_F26_DogWalker
 {
+
+    //next steps - make service cost properties
+    //change hardcoded service costs in case statement based on properties
+    // move case statement to own method that just sets service cost based on service type
+
     public partial class Form1 : Form
     {
+        private string serviceType;
         public Form1()
         {
             InitializeComponent();
@@ -9,10 +15,12 @@ namespace Frary_F26_DogWalker
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+
             txtNumPerWeek.Clear();
             txtPetName.Clear();
             lstOut.Items.Clear();
             txtPetName.Focus();
+
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -33,7 +41,7 @@ namespace Frary_F26_DogWalker
             // uint is an unsigned int this means you
             // can't have negative numbers
             uint numPerWeek;
-            decimal serviceCost = 20.0m;           
+            decimal serviceCost = 20.0m;
             bool isNumWeekValid;
             bool isPetNameValid = true;
             //input
@@ -65,7 +73,7 @@ namespace Frary_F26_DogWalker
 
                 //2. Using the constructor with parameters
                 // Calcuulation is done in the class
-                DogWalker dWalker2 = new DogWalker(petName, numPerWeek, serviceCost);
+                DogWalker dWalker2 = new DogWalker(petName, numPerWeek, serviceType);
 
                 //weeklyCost = numPerWeek * serviceCost;
                 //output results to the list box
@@ -115,6 +123,33 @@ namespace Frary_F26_DogWalker
             txtNumPerWeek.BackColor = SystemColors.Window;
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rdoDogWalk.Checked = true;
+        }
+
+        private void rdoDogWalk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoDogWalk.Checked)
+            {
+                serviceType = DogWalker.DOG_WALK_TYPE;
+            }
+        }
+
+        private void rdoDogPark_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoDogPark.Checked)
+            {
+                serviceType = DogWalker.DOG_PARK_TYPE; ;
+            }
+        }
+
+        private void rdoPetSitting_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdoPetSitting.Checked)
+            {
+                serviceType = DogWalker.PET_SITTING_TYPE;
+            }
+        }
     }
 }

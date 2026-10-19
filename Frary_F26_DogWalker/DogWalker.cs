@@ -6,6 +6,9 @@ namespace Frary_F26_DogWalker
 {
     internal class DogWalker
     {       
+        public const string DOG_WALK_TYPE = "Dog Walk";
+        public const string DOG_PARK_TYPE = "Dog Park";
+        public const string PET_SITTING_TYPE = "Pet Sitting";
 
         private decimal sCost;  //backing variable for the service cost
         private decimal wCost; //backing variable for the weekly cost        
@@ -28,11 +31,26 @@ namespace Frary_F26_DogWalker
             CalculateWeeklyCost();
         }
 
-        public DogWalker(string petName, uint numberPerWeek, decimal serviceCost)
+        public DogWalker(string petName, uint numberPerWeek, string serviceType)
         {
             PetName = petName;
             NumberPerWeek = numberPerWeek;
-            ServiceCost = serviceCost;
+            // Set the service cost based on the service type
+            switch (serviceType)
+            {
+                case DOG_WALK_TYPE:
+                    sCost = 20.0m;
+                    break;
+                case DOG_PARK_TYPE:
+                    sCost = 15.0m;
+                    break;
+                case PET_SITTING_TYPE:
+                    sCost = 25.0m;
+                    break;
+                default:
+                    sCost = 0.0m;
+                    break;
+            }
             CalculateWeeklyCost();
         }
 

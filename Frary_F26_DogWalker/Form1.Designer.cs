@@ -37,6 +37,11 @@
             btnCalculate = new Button();
             btnClear = new Button();
             btnQuit = new Button();
+            groupBox1 = new GroupBox();
+            rdoPetSitting = new RadioButton();
+            rdoDogPark = new RadioButton();
+            rdoDogWalk = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -133,11 +138,60 @@
             btnQuit.UseVisualStyleBackColor = true;
             btnQuit.Click += btnQuit_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rdoPetSitting);
+            groupBox1.Controls.Add(rdoDogPark);
+            groupBox1.Controls.Add(rdoDogWalk);
+            groupBox1.Location = new Point(42, 54);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(385, 52);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Service Type";
+            // 
+            // rdoPetSitting
+            // 
+            rdoPetSitting.AutoSize = true;
+            rdoPetSitting.Location = new Point(266, 22);
+            rdoPetSitting.Name = "rdoPetSitting";
+            rdoPetSitting.Size = new Size(79, 19);
+            rdoPetSitting.TabIndex = 2;
+            rdoPetSitting.TabStop = true;
+            rdoPetSitting.Text = "Pet Sitting";
+            rdoPetSitting.UseVisualStyleBackColor = true;
+            rdoPetSitting.CheckedChanged += rdoPetSitting_CheckedChanged;
+            // 
+            // rdoDogPark
+            // 
+            rdoDogPark.AutoSize = true;
+            rdoDogPark.Location = new Point(143, 22);
+            rdoDogPark.Name = "rdoDogPark";
+            rdoDogPark.Size = new Size(73, 19);
+            rdoDogPark.TabIndex = 1;
+            rdoDogPark.TabStop = true;
+            rdoDogPark.Text = "Dog Park";
+            rdoDogPark.UseVisualStyleBackColor = true;
+            rdoDogPark.CheckedChanged += rdoDogPark_CheckedChanged;
+            // 
+            // rdoDogWalk
+            // 
+            rdoDogWalk.AutoSize = true;
+            rdoDogWalk.Location = new Point(17, 22);
+            rdoDogWalk.Name = "rdoDogWalk";
+            rdoDogWalk.Size = new Size(76, 19);
+            rdoDogWalk.TabIndex = 0;
+            rdoDogWalk.TabStop = true;
+            rdoDogWalk.Text = "Dog Walk";
+            rdoDogWalk.UseVisualStyleBackColor = true;
+            rdoDogWalk.CheckedChanged += rdoDogWalk_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(467, 450);
+            Controls.Add(groupBox1);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalculate);
@@ -149,6 +203,9 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Frary Dog Walker Transaction Form";
+            Load += Form1_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +221,9 @@
         private Button btnCalculate;
         private Button btnClear;
         private Button btnQuit;
+        private GroupBox groupBox1;
+        private RadioButton rdoPetSitting;
+        private RadioButton rdoDogPark;
+        private RadioButton rdoDogWalk;
     }
 }
