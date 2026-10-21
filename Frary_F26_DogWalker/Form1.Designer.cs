@@ -99,7 +99,9 @@
             // 
             lstOut.Font = new Font("Segoe UI", 12F);
             lstOut.FormattingEnabled = true;
-            lstOut.Location = new Point(24, 226);
+            lstOut.HorizontalExtent = 5000;
+            lstOut.HorizontalScrollbar = true;
+            lstOut.Location = new Point(24, 225);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(431, 130);
             lstOut.TabIndex = 5;

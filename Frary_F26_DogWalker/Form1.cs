@@ -78,13 +78,15 @@ namespace Frary_F26_DogWalker
                 //weeklyCost = numPerWeek * serviceCost;
                 //output results to the list box
                 lstOut.Items.Add("Pet name is " + dWalker2.PetName);
+                lstOut.Items.Add("Service type is " + serviceType);
                 lstOut.Items.Add("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"));
                 lstOut.Items.Add("Cost per service is " + dWalker2.ServiceCost.ToString("C"));
                 lstOut.Items.Add("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"));
 
                 // Demonstrate the ToString and GetType methods
-                lstOut.Items.Add("The ToString will give me " + dWalker2.ToString());
                 lstOut.Items.Add("The getType will give me " + dWalker2.GetType().ToString());
+                lstOut.Items.Add("The ToString will give me " + dWalker2.ToString());
+               
                 // For ICA 3 You only need to implement one of the objects above.  
                 // You should, however, implement as least 2 constructors
                 // in your calculation class.
