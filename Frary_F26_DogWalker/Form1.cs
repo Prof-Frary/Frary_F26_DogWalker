@@ -7,6 +7,8 @@ namespace Frary_F26_DogWalker
 
     public partial class Form1 : Form
     {
+        private string PetServiceTransOutput = "TranactionOutput.txt";
+
         private string serviceType;
         public Form1()
         {
@@ -44,6 +46,8 @@ namespace Frary_F26_DogWalker
             decimal serviceCost = 20.0m;
             bool isNumWeekValid;
             bool isPetNameValid = true;
+            StreamWriter sw;
+
             //input
             petName = txtPetName.Text.Trim();
             if (petName == "")
@@ -86,10 +90,26 @@ namespace Frary_F26_DogWalker
                 // Demonstrate the ToString and GetType methods
                 lstOut.Items.Add("The getType will give me " + dWalker2.GetType().ToString());
                 lstOut.Items.Add("The ToString will give me " + dWalker2.ToString());
-               
-                // For ICA 3 You only need to implement one of the objects above.  
-                // You should, however, implement as least 2 constructors
-                // in your calculation class.
+
+                // output to a file
+                sw = File.AppendText(PetServiceTransOutput);
+                sw.WriteLine("************** Transaction Output at " + DateTime.Now.ToString("G") + " ****************");
+
+                sw.WriteLine("Pet name is " + dWalker2.PetName);
+
+                sw.WriteLine("Service type is " + serviceType);
+
+                sw.WriteLine("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"));
+
+                sw.WriteLine("Cost per service is " + dWalker2.ServiceCost.ToString("C"));
+
+                sw.WriteLine("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"));
+
+                // Demonstrate the ToString and GetType methods
+                sw.WriteLine("The getType will give me " + dWalker2.GetType().ToString());
+                sw.WriteLine("The ToString will give me " + dWalker2.ToString());
+                sw.Close();
+
             }
             else
             {

@@ -1,0 +1,81 @@
+Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $20.00
+Total weekly cost is $80.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $20.00
+Total weekly cost is $80.00
+Pet name is Jeter
+Service type is Dog Park
+Number of walks/services per week is 4
+Cost per service is $25.00
+Total weekly cost is $100.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Dog Park
+Number of walks/services per week is 4
+Cost per service is $25.00
+Total weekly cost is $100.00
+Pet name is Jeter
+Service type is Pet Sitting
+Number of walks/services per week is 4
+Cost per service is $30.00
+Total weekly cost is $120.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Pet Sitting
+Number of walks/services per week is 4
+Cost per service is $30.00
+Total weekly cost is $120.00
+************** Transaction Output at 10/26/2026 11:30:50 AM ****************
+Pet name is kdsg;jdsfl
+Service type is Dog Walk
+Number of walks/services per week is 5
+Cost per service is $20.00
+Total weekly cost is $100.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is kdsg;jdsfl
+Service type is Dog Walk
+Number of walks/services per week is 5
+Cost per service is $20.00
+Total weekly cost is $100.00
+************** Transaction Output at 10/26/2026 11:30:53 AM ****************
+Pet name is kdsg;jdsfl
+Service type is Dog Park
+Number of walks/services per week is 5
+Cost per service is $25.00
+Total weekly cost is $125.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is kdsg;jdsfl
+Service type is Dog Park
+Number of walks/services per week is 5
+Cost per service is $25.00
+Total weekly cost is $125.00
+************** Transaction Output at 10/26/2026 11:30:55 AM ****************
+Pet name is kdsg;jdsfl
+Service type is Pet Sitting
+Number of walks/services per week is 5
+Cost per service is $30.00
+Total weekly cost is $150.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is kdsg;jdsfl
+Service type is Pet Sitting
+Number of walks/services per week is 5
+Cost per service is $30.00
+Total weekly cost is $150.00
+************** Transaction Output at 10/26/2026 11:30:58 AM ****************
+Pet name is kdsg;jdsfl
+Service type is Pet Sitting
+Number of walks/services per week is 5
+Cost per service is $30.00
+Total weekly cost is $150.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is kdsg;jdsfl
+Service type is Pet Sitting
+Number of walks/services per week is 5
+Cost per service is $30.00
+Total weekly cost is $150.00
