@@ -8,8 +8,11 @@ namespace Frary_F26_DogWalker
     public partial class Form1 : Form
     {
         private string PetServiceTransOutput = "TranactionOutput.txt";
-
+        private string PetServiceCFG   = "PetServicesCFG.txt";
         private string serviceType;
+        private const int LISTBOX = 1;
+        private const int FILE = 2;
+        private const int BOTH = 3;
         public Form1()
         {
             InitializeComponent();
@@ -76,53 +79,44 @@ namespace Frary_F26_DogWalker
                 dWalker1.CalculateWeeklyCost();
 
                 //2. Using the constructor with parameters
-                // Calcuulation is done in the class
+                // Calculation is done in the class
                 DogWalker dWalker2 = new DogWalker(petName, numPerWeek, serviceType);
 
-                //weeklyCost = numPerWeek * serviceCost;
-                //output results to the list box
-                lstOut.Items.Add("Pet name is " + dWalker2.PetName);
-                lstOut.Items.Add("Service type is " + serviceType);
-                lstOut.Items.Add("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"));
-                lstOut.Items.Add("Cost per service is " + dWalker2.ServiceCost.ToString("C"));
-                lstOut.Items.Add("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"));
-
-                // Demonstrate the ToString and GetType methods
-                lstOut.Items.Add("The getType will give me " + dWalker2.GetType().ToString());
-                lstOut.Items.Add("The ToString will give me " + dWalker2.ToString());
-
-                // output to a file
-                sw = File.AppendText(PetServiceTransOutput);
-                sw.WriteLine("************** Transaction Output at " + DateTime.Now.ToString("G") + " ****************");
-
-                sw.WriteLine("Pet name is " + dWalker2.PetName);
-
-                sw.WriteLine("Service type is " + serviceType);
-
-                sw.WriteLine("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"));
-
-                sw.WriteLine("Cost per service is " + dWalker2.ServiceCost.ToString("C"));
-
-                sw.WriteLine("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"));
-
-                // Demonstrate the ToString and GetType methods
-                sw.WriteLine("The getType will give me " + dWalker2.GetType().ToString());
-                sw.WriteLine("The ToString will give me " + dWalker2.ToString());
-                sw.Close();
-
+                // output 
+                outputMsg("************** Transaction Output at " + DateTime.Now.ToString("G") + " ****************",FILE);
+                outputMsg("Pet name is " + dWalker2.PetName, BOTH);
+                outputMsg("Service type is " + serviceType, BOTH);
+                outputMsg("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"), BOTH);
+                outputMsg("Cost per service is " + dWalker2.ServiceCost.ToString("C"),BOTH);
+                outputMsg("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"),BOTH);
             }
             else
             {
                 if (!isPetNameValid)
                 {
-                    lstOut.Items.Add("Please enter a pet name.");
+                    outputMsg("Please enter a pet name.", LISTBOX);
                 }
                 if (!isNumWeekValid)
                 {
-                    lstOut.Items.Add("Please enter a non-negative whole number of walks/services per week.");
+                    outputMsg("Please enter a non-negative whole number of walks/services per week.", LISTBOX);
                 }
             }
 
+        }
+        
+        private void outputMsg (string msg, int type)
+        {
+            StreamWriter sw;
+            if (type == FILE || type == BOTH)
+            {
+                sw = File.AppendText(PetServiceTransOutput);
+                sw.WriteLine(msg);
+                sw.Close();
+            }
+            if (type == LISTBOX || type == BOTH)
+            {
+                lstOut.Items.Add(msg);
+            }
         }
 
         private void txtPetName_Enter(object sender, EventArgs e)
@@ -148,6 +142,18 @@ namespace Frary_F26_DogWalker
         private void Form1_Load(object sender, EventArgs e)
         {
             rdoDogWalk.Checked = true;
+            StreamReader sr;
+
+            sr = File.OpenText(PetServiceCFG);
+            string temp = sr.ReadLine();
+            DogWalker.WalkServiceCost = decimal.Parse(temp);
+            temp = sr.ReadLine();
+            DogWalker.ParkServiceCost = decimal.Parse(temp);
+            temp = sr.ReadLine();
+            DogWalker.SittingServiceCost = decimal.Parse(temp);
+
+            sr.Close();
+
         }
 
         private void rdoDogWalk_CheckedChanged(object sender, EventArgs e)

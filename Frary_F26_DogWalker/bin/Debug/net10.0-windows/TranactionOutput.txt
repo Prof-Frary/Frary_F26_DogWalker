@@ -79,3 +79,39 @@ Service type is Pet Sitting
 Number of walks/services per week is 5
 Cost per service is $30.00
 Total weekly cost is $150.00
+************** Transaction Output at 11/2/2026 11:26:48 AM ****************
+Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $100.00
+Total weekly cost is $400.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $100.00
+Total weekly cost is $400.00
+************** Transaction Output at 11/2/2026 11:26:54 AM ****************
+Pet name is Jeter
+Service type is Dog Park
+Number of walks/services per week is 4
+Cost per service is $200.00
+Total weekly cost is $800.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Dog Park
+Number of walks/services per week is 4
+Cost per service is $200.00
+Total weekly cost is $800.00
+************** Transaction Output at 11/2/2026 11:27:03 AM ****************
+Pet name is Jeter
+Service type is Pet Sitting
+Number of walks/services per week is 4
+Cost per service is $300.00
+Total weekly cost is $1,200.00
+The getType will give me Frary_F26_DogWalker.DogWalker
+The ToString will give me Pet name is Jeter
+Service type is Pet Sitting
+Number of walks/services per week is 4
+Cost per service is $300.00
+Total weekly cost is $1,200.00
