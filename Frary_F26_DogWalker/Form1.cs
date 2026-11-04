@@ -7,8 +7,8 @@ namespace Frary_F26_DogWalker
 
     public partial class Form1 : Form
     {
-        private string PetServiceTransOutput = "TranactionOutput.txt";
-        private string PetServiceCFG   = "PetServicesCFG.txt";
+        private string petServiceTransOutput = "TranactionOutput.txt";
+        private string petServiceCFG   = "PetServicesCFG1.txt";
         private string serviceType;
         private const int LISTBOX = 1;
         private const int FILE = 2;
@@ -109,7 +109,7 @@ namespace Frary_F26_DogWalker
             StreamWriter sw;
             if (type == FILE || type == BOTH)
             {
-                sw = File.AppendText(PetServiceTransOutput);
+                sw = File.AppendText(petServiceTransOutput);
                 sw.WriteLine(msg);
                 sw.Close();
             }
@@ -143,16 +143,48 @@ namespace Frary_F26_DogWalker
         {
             rdoDogWalk.Checked = true;
             StreamReader sr;
+            bool fileExists = false;
+            int numTries = 0;
+            const int MAX_TRIES = 3;
+            do // post Test loop
+            {
+                try // try catch block to handle file not found exception
+                {
+                    numTries++;
+                    sr = File.OpenText(petServiceCFG);
+                    // if file exists the rest of this code runs 
+                    fileExists = true;
+                    string temp = sr.ReadLine();
+                    DogWalker.WalkServiceCost = decimal.Parse(temp);
+                    temp = sr.ReadLine();
+                    DogWalker.ParkServiceCost = decimal.Parse(temp);
+                    temp = sr.ReadLine();
+                    DogWalker.SittingServiceCost = decimal.Parse(temp);
+                    sr.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    // If the user tries to open the file more than a certain amount assume
+                    // the file doesn't exist and populate the values with hardcoded values 
+                    if (numTries <= MAX_TRIES) {
+                        // need the message box otherwise the user might be confused why they are getting the 
+                        // OPenFile Dialog box
+                        MessageBox.Show("The configuration file " + petServiceCFG + " was not found. Please select the file. \n The message was " + ex.Message,
+                            "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+                        openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                        openFileDialog1.ShowDialog();
+                        petServiceCFG = openFileDialog1.FileName;
+                    } else
+                    {
+                        DogWalker.WalkServiceCost = 25.0m;
+                        DogWalker.ParkServiceCost = 30.0m;
+                        DogWalker.SittingServiceCost = 35.0m;
+                        fileExists = true;
+                    }
 
-            sr = File.OpenText(PetServiceCFG);
-            string temp = sr.ReadLine();
-            DogWalker.WalkServiceCost = decimal.Parse(temp);
-            temp = sr.ReadLine();
-            DogWalker.ParkServiceCost = decimal.Parse(temp);
-            temp = sr.ReadLine();
-            DogWalker.SittingServiceCost = decimal.Parse(temp);
-
-            sr.Close();
+                }
+            } while (!fileExists);
 
         }
 

@@ -30,9 +30,9 @@ namespace Frary_F26_DogWalker
         public uint NumberPerWeek { get; set; }
 
         //These values will be the same for all instances of the class, so they are static
-        public static decimal WalkServiceCost { get; set; }  = 20.0m;
-        public static decimal ParkServiceCost { get; set; } = 25.0m;
-        public static decimal SittingServiceCost { get; set; } = 30.0m;
+        public static decimal WalkServiceCost { get; set; }
+        public static decimal ParkServiceCost { get; set; }
+        public static decimal SittingServiceCost { get; set; }
         
         public string ServiceType { get; set; }
 

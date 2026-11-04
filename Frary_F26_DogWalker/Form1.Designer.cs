@@ -41,6 +41,7 @@
             rdoPetSitting = new RadioButton();
             rdoDogPark = new RadioButton();
             rdoDogWalk = new RadioButton();
+            openFileDialog1 = new OpenFileDialog();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -188,6 +189,10 @@
             rdoDogWalk.UseVisualStyleBackColor = true;
             rdoDogWalk.CheckedChanged += rdoDogWalk_CheckedChanged;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -227,5 +232,6 @@
         private RadioButton rdoPetSitting;
         private RadioButton rdoDogPark;
         private RadioButton rdoDogWalk;
+        private OpenFileDialog openFileDialog1;
     }
 }
