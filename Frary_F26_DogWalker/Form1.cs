@@ -66,29 +66,13 @@ namespace Frary_F26_DogWalker
             // Regular Processing - what we have already done
             if (isNumWeekValid && isPetNameValid)
             {
-
-                // Two ways to create an object of the DogWalker class
-                // 1. Using the constructor without parameters
-                // You will need to sett all necessary properties before calling the
-                // CalculateWeeklyCost method 
-
-                DogWalker dWalker1 = new DogWalker();
-                dWalker1.PetName = petName;
-                dWalker1.NumberPerWeek = numPerWeek;
-                dWalker1.ServiceCost = serviceCost;
-                dWalker1.CalculateWeeklyCost();
-
-                //2. Using the constructor with parameters
                 // Calculation is done in the class
                 DogWalker dWalker2 = new DogWalker(petName, numPerWeek, serviceType);
 
                 // output 
                 outputMsg("************** Transaction Output at " + DateTime.Now.ToString("G") + " ****************",FILE);
-                outputMsg("Pet name is " + dWalker2.PetName, BOTH);
-                outputMsg("Service type is " + serviceType, BOTH);
-                outputMsg("Number of walks/services per week is " + dWalker2.NumberPerWeek.ToString("N0"), BOTH);
-                outputMsg("Cost per service is " + dWalker2.ServiceCost.ToString("C"),BOTH);
-                outputMsg("Total weekly cost is " + dWalker2.WeeklyCost.ToString("C"),BOTH);
+                outputMsg(dWalker2.ToString(), BOTH);             
+               
             }
             else
             {
@@ -115,7 +99,13 @@ namespace Frary_F26_DogWalker
             }
             if (type == LISTBOX || type == BOTH)
             {
-                lstOut.Items.Add(msg);
+                // this allows the code to use the tostring output without multiple calls to ope the file
+                string[] lines = msg.Split('\n');
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    lstOut.Items.Add(lines[i]);
+                }
+               
             }
         }
 

@@ -157,3 +157,21 @@ Service type is Dog Walk
 Number of walks/services per week is 4
 Cost per service is $100.00
 Total weekly cost is $400.00
+************** Transaction Output at 11/11/2026 11:37:43 AM ****************
+Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $100.00
+Total weekly cost is $400.00
+************** Transaction Output at 11/11/2026 11:39:51 AM ****************
+Pet name is Jeter
+Service type is 
+Number of walks/services per week is 4
+Cost per service is $0.00
+Total weekly cost is $0.00
+************** Transaction Output at 11/11/2026 11:42:57 AM ****************
+Pet name is Jeter
+Service type is Dog Walk
+Number of walks/services per week is 4
+Cost per service is $100.00
+Total weekly cost is $400.00
