@@ -58,6 +58,27 @@ namespace Frary_F26_DogWalker
                 isPetNameValid = false;
 
             }
+            // ************** name code *********************
+            // you don't have to add this code but if you do you will have to change your properties
+            // from name ( customer name, emplyee name ) to lastname and first name
+            // here I will not do that part just give you the code to create both parts of the name
+            string lastName, firstName;
+            // finds the position of the space in the name
+            int posOfSpace = petName.IndexOf(" ");
+            if (posOfSpace > 0) // if there is a first and last name
+            {
+                firstName = petName.Substring(0, posOfSpace);
+                lastName = petName.Substring(posOfSpace + 1).Trim();
+            }
+            else // if there is no last name
+            {
+                firstName = petName;
+                lastName = "";
+            }
+            // you could also check if lastname is first, then you could check for a comma before you check for the space
+            // then switch the code for lastname and first name
+
+            //******** end of name code ***************
 
             // numPerWeek = uint.Parse(txtNumPerWeek.Text);
             //ICA 5
